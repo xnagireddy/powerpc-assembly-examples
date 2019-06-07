@@ -1,7 +1,4 @@
-e1
-e2
-e3
-e4
+e[1-9]
 hello
 hello2
 hello-world

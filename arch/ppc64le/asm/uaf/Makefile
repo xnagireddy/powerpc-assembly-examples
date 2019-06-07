@@ -1,4 +1,5 @@
-TARGETS := e1 e2 e3 e4 e5
+TARGETS := e1 e2 e3 e4 e5 e6 e7 e8 e9
+OBJECTS := $(patsubst %, %.o, $(TARGETS))
 
 all: ${TARGETS}
 
@@ -12,5 +13,5 @@ ${TARGETS}: %: %.o
 	./$^
 
 clean:
-	rm -f ${TARGETS}
+	rm -f ${TARGETS} $(OBJECTS)
 
