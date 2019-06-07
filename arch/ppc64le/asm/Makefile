@@ -1,5 +1,6 @@
 # TARGETS := hello hello2
 TARGETS := hello2 e1 just-exit hello-world
+OBJECTS := $(patsubst, %, %.o, $(TARGETS))
 
 all: ${TARGETS}
 
@@ -13,5 +14,5 @@ ${TARGETS}: %: %.o
 	./$^
 
 clean:
-	rm -f ${TARGETS}
+	rm -f ${TARGETS} $(OBJECTS)
 

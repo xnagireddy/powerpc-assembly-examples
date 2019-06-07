@@ -1,15 +1,17 @@
 .data
 
 HelloWorldString:
-    .ascii "Hello World\n"
+    .ascii "Hello World!\n"
     hwlength = . - HelloWorldString
 
 .text
     .global _start
+    .section ".opd", "aw"
     .align 3
 
 _start:
     .quad   ._start,.TOC.@tocbase,0
+    .previous
 
     .global  ._start
 ._start:
