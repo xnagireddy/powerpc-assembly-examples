@@ -2,10 +2,10 @@
 
 HelloWorldString:
     .ascii "Hello World\n"
+    hwlength = . - HelloWorldString
 
 .text
     .global _start
-    .section        ".opd","aw"
     .align 3
 
 _start:
@@ -19,11 +19,11 @@ _start:
     li   3, 1  # filenumber 1 (stdout)
     lis  4, HelloWorldString@ha   # load upper 16 bits of addr
     addi 4, 4, HelloWorldString@l # add lower 16 bits of addr
-    li   5, 12 # length of string
+    li   5, hwlength # length of string
     sc
 
     # exit the program
-    li 0,1
-    li 3,0
+    li 0, 1
+    li 3, 0
     sc
 
