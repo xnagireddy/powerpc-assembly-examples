@@ -1,6 +1,5 @@
-# TARGETS := hello hello2
-TARGETS := hello hello2
-OBJECTS := $(patsubst, %, %.o, $(TARGETS))
+TARGETS := $(patsubst %.s, %, $(wildcard *.s))
+OBJECTS := $(patsubst %, %.o, $(TARGETS))
 
 all: ${TARGETS}
 
