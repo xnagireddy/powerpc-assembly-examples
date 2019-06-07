@@ -13,8 +13,5 @@ _start:
 load:
     lis 3, (0xdeadbeef)@ha
     addi 3, 3, (0xdeadbeef)@l
-    li 3, 2
-    addi 3, 3, 1
-    li 3, (0xdeadbeef)@ha
     blr
 
